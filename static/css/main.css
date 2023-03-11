@@ -1,0 +1,95 @@
+nav {
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+  }
+  
+  nav .logo a {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  nav .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav .menu li a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 30px;
+  }
+  
+  nav .burger {
+    display: none;
+  }
+  
+  @media screen and (max-width: 768px) {
+    nav .menu {
+      display: none;
+    }
+  
+    nav .burger {
+      display: block;
+      cursor: pointer;
+    }
+  
+    nav .burger span {
+      display: block;
+      width: 30px;
+      height: 5px;
+      background-color: #fff;
+      margin: 5px;
+      transition: all 0.3s ease-in-out;
+    }
+  
+    nav .burger.active span:nth-child(2) {
+      opacity: 0;
+    }
+  
+    nav .burger.active span:nth-child(1) {
+      transform: translateY(10px) rotate(45deg);
+    }
+  
+    nav .burger.active span:nth-child(3) {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+    
+    nav.active .menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 80px);
+      background-color: #333;
+      opacity: 0.95;
+      z-index: 9998;
+      overflow-y: scroll;
+    }
+  
+    nav.active .menu li a {
+      font-size: 24px;
+      margin: 20px 0;
+    }
+  }
+  
